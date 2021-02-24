@@ -1,27 +1,28 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import s from './Profile.module.css';
 
 const Profile = ({ avatar, tag, name, location, followers, views, likes }) => (
-  <div class="profile">
-    <div class="description">
-      <img src={avatar} alt={tag} class="avatar" width="150" />
-      <p class="name">{name}</p>
-      <p class="tag">@{tag}</p>
-      <p class="location">{location}</p>
+  <div className={s.profile}>
+    <div className={s.description}>
+      <img src={avatar} alt={tag} className={s.avatar} />
+      <p className={s.name}>{name}</p>
+      <p className={s.tag}>@{tag}</p>
+      <p className={s.location}>{location}</p>
     </div>
 
-    <ul class="stats">
-      <li>
-        <span class="label">Followers</span>
-        <span class="quantity">{followers}</span>
+    <ul className={s.stats}>
+      <li className={s.item}>
+        <span className={s.label}>Followers</span>
+        <span className={s.quantity}>{followers}</span>
       </li>
-      <li>
-        <span class="label">Views</span>
-        <span class="quantity">{views}</span>
+      <li className={s.item}>
+        <span className={s.label}>Views</span>
+        <span className={s.quantity}>{views}</span>
       </li>
-      <li>
-        <span class="label">Likes</span>
-        <span class="quantity">{likes}</span>
+      <li className={s.item}>
+        <span className={s.label}>Likes</span>
+        <span className={s.quantity}>{likes}</span>
       </li>
     </ul>
   </div>
@@ -32,9 +33,9 @@ Profile.propTypes = {
   tag: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
-  followers: PropTypes.string.isRequired,
-  views: PropTypes.string.isRequired,
-  likes: PropTypes.string.isRequired,
+  followers: PropTypes.number.isRequired,
+  views: PropTypes.number.isRequired,
+  likes: PropTypes.number.isRequired,
 };
 
 export default Profile;

@@ -1,11 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import Friend from "./Friend";
+import React from 'react';
+import PropTypes from 'prop-types';
+import Friend from './Friend/Friend';
+import s from './FriendsList.module.css';
 
 const FriendList = ({ friends }) => (
-  <ul class="friend-list">
+  <ul className={s.friendList}>
     {friends.map(({ id, isOnline, avatar, name }) => (
-      <li key={id} class="item">
+      <li key={id} className={s.item}>
         <Friend isOnline={isOnline} avatar={avatar} name={name} />
       </li>
     ))}
@@ -15,8 +16,8 @@ const FriendList = ({ friends }) => (
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.string.isRequired,
-    })
+      id: PropTypes.number.isRequired,
+    }),
   ).isRequired,
 };
 
