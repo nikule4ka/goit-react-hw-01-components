@@ -8,7 +8,11 @@ const Statistics = ({ title, stats }) => (
 
     <ul className={s.statList}>
       {stats.map(item => (
-        <li key={item.id} className={s.item}>
+        <li
+          key={item.id}
+          className={s.item}
+          style={{ backgroundColor: getRandomColor() }}
+        >
           <span className={s.label}>{item.label}</span>
           <span className={s.percentage}>{item.percentage}%</span>
         </li>
@@ -31,5 +35,10 @@ Statistics.propTypes = {
     }),
   ).isRequired,
 };
+
+function getRandomColor() {
+  const number = Math.floor(Math.random() * 16777215).toString(16);
+  return '#' + number;
+}
 
 export default Statistics;
