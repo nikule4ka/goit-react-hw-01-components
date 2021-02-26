@@ -5,10 +5,8 @@ import s from './FriendsList.module.css';
 
 const FriendList = ({ friends }) => (
   <ul className={s.friendList}>
-    {friends.map(({ id, isOnline, avatar, name }) => (
-      <li key={id} className={s.item}>
-        <Friend isOnline={isOnline} avatar={avatar} name={name} />
-      </li>
+    {friends.map(({ isOnline, avatar, name }) => (
+      <Friend isOnline={isOnline} avatar={avatar} name={name} />
     ))}
   </ul>
 );

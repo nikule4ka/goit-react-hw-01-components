@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import s from './Friend.module.css';
 
-const Friend = ({ isOnline, avatar, name }) => (
-  <>
+const Friend = ({ id, isOnline, avatar, name }) => (
+  <li key={id} className={s.item}>
     <span className={isOnline ? s.statusOnline : s.statusOffline}></span>
     <img className={s.avatar} src={avatar} alt={name} />
     <p className={s.name}>{name}</p>
-  </>
+  </li>
 );
 
 Friend.propTypes = {

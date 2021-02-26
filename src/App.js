@@ -5,10 +5,10 @@ import Statistics from './components/statistics/Statistics';
 import FriendList from './components/friendsList/FriendList';
 import TransactionHistory from './components/transactionHistory/TransactionHistory';
 
-import user from './components/db/user.json';
-import statisticalData from './components/db/statistical-data.json';
-import friends from './components/db/friends.json';
-import transactions from './components/db/transactions.json';
+import user from './db/user.json';
+import statisticalData from './db/statistical-data.json';
+import friends from './db/friends.json';
+import transactions from './db/transactions.json';
 
 const App = () => {
   return (
@@ -18,9 +18,7 @@ const App = () => {
         tag={user.tag}
         location={user.location}
         avatar={user.avatar}
-        followers={user.stats.followers}
-        views={user.stats.views}
-        likes={user.stats.likes}
+        stats={user.stats}
       />
       <Statistics title="Upload stats" stats={statisticalData} />
       {/* <Statistics stats={statisticalData} /> */}
